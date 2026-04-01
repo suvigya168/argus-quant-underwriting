@@ -1,8 +1,9 @@
 ARGUS: Probabilistic M&A Underwriting Engine
-National Finalist (Top 8) | IIT BHU AI-Quisition 2026
+
+National Finalist (Top 8) | IIT BHU AI-Quisition 2026 :
 ARGUS (Advanced Risk-Guided Underwriting System) is a quantitative framework developed to solve the "Deal Sourcing" challenge for mid-cap IT acquisitions. Unlike traditional models that rely on static "mean" estimates, ARGUS utilizes Bayesian Inference to model uncertainty and prioritize capital preservation.
 
-The Problem: The "Mean" Trap
+The Problem: The "Mean" Trap :
 Standard M&A valuations often fail because they assume a single "best-case" growth rate. ARGUS replaces this with a probabilistic distribution, identifying targets that are not just "high-growth," but high-conviction.
 
 Technical Architecture
@@ -12,7 +13,7 @@ Bayesian Posterior Sampling: Implemented using PyMC, utilizing Markov Chain Mont
 
 Monte Carlo Simulations: Executes 4,000 simulations per target to project 5-year Free Cash Flow (FCF) paths under institutional constraints.
 
-The Decision Rule: Risk-Adjusted Alpha
+The Decision Rule: Risk-Adjusted Alpha :
 To identify the #1 Top Pick, I implemented a scoring rule that penalizes "high-growth but fragile" companies:
 
 Score = (Mean IRR × Probability > 12%) - |Expected Shortfall × Probability < 0%|
@@ -25,7 +26,7 @@ Expected Shortfall (ES): The average loss in the "worst-case" 5% of scenarios (T
 
 Prob < 0%: The risk of absolute capital impairment (losing money).
 
-Underwriting Assumptions
+Underwriting Assumptions :
 Horizon: 5-Year private asset maturity.
 
 Control Premium: 25% (India mid-market benchmark).
@@ -34,7 +35,7 @@ Tax/Reinvestment: 25.0% Corporate Tax and 30.0% Reinvestment drag on NOPAT.
 
 Exit: Zero Multiple Expansion (assumes entry P/E = exit P/E) to ensure conservative bias.
 
-Tech Stack
+Tech Stack :
 Language: Python.
 
 Modeling: PyMC 5.28 (Probabilistic Programming).
